@@ -1,0 +1,28 @@
+.content {
+  display: grid;
+  grid-template-rows: 0.7fr 5fr;
+  grid-template-columns: 2fr 5fr;
+  grid-template-areas: "nav nav" "topArticles articles";
+  border: 1px solid black;
+}
+
+.nav {
+  grid-area: nav;
+  border: 1px solid red;
+}
+
+.topArticles {
+  grid-area: topArticles;
+  border: 1px solid purple;
+}
+.articles {
+  grid-area: articles;
+  border: 1px solid brown;
+  overflow-y: scroll;
+}
+
+.articleCard {
+  border: 1px solid grey;
+  overflow-y: hidden;
+  margin: 5px;
+}

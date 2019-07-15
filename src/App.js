@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Router } from "@reach/router";
+import "./App.css";
+import "./articles.css";
+import Heading from "./components/Heading";
+import Footer from "./components/Footer";
+import Articles from "./components/Articles";
+import Home from "./components/Home";
+import * as api from "./utils";
+class App extends Component {
+  state = {
+    topics: []
+  };
+  render() {
+    const { topics } = this.state;
+    return (
+      <div className="App">
+        <Heading />
+        <Router className="content">
+          <Home path="/" />
+          <Articles path="/articles" topics={topics} />
+          <Articles path="/topics/:topic" topics={topics} />
+        </Router>
+        <Footer />
+      </div>
+    );
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  componentDidMount = () => {
+    this.fetchTopics();
+  };
+  fetchTopics = () => {
+    const { topics } = this.state;
+    api.getTopics().then(data => {
+      this.setState({ topics: data });
+    });
+  };
 }
 
 export default App;
