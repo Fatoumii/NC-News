@@ -30,7 +30,6 @@ class App extends Component {
     this.fetchTopics();
   };
   fetchTopics = () => {
-    const { topics } = this.state;
     api.getTopics().then(data => {
       this.setState({ topics: data });
     });

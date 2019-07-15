@@ -8,7 +8,7 @@ class ArticleCard extends Component {
         {articles.map(article => {
           return (
             <div key={article.article_id} className="articleCard">
-              {/* <h4>{article.title}</h4> */}
+              <h4>{article.title}</h4>
               {/* <p>{article.body}</p> */}
             </div>
           );

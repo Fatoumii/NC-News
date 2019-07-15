@@ -19,11 +19,16 @@ class Articles extends Component {
       </>
     );
   }
+  // componentDidUpdate = (prevProps, prevState) => {
+  //   const title = this.props.topics !== prevProps.topic;
+  //   if (title) this.fetchArticles();
+  // };
+
   componentDidMount = () => {
     this.fetchArticles();
   };
+
   fetchArticles = () => {
-    const { articles } = this.state;
     api.getArticles().then(data => {
       this.setState({ articles: data });
     });

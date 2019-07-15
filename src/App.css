@@ -13,6 +13,8 @@
 .heading {
   grid-area: header;
   border: 1px solid blue;
+  margin: 0em;
+  /* padding: 40px; */
 }
 
 .content {
