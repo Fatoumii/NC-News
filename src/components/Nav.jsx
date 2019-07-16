@@ -12,9 +12,6 @@ const Nav = props => {
           </Link>
         );
       })}
-      <Link to="/post-article" className="post">
-        {"+"}
-      </Link>
     </div>
   );
 };

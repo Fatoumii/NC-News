@@ -19,10 +19,8 @@ class App extends Component {
         <Heading />
         <Router className="content">
           <Home path="/" />
-          <Content path="/articles" topics={topics} />
+          <Content path="/articles/*" topics={topics} />
           <Content path="/topics/:topic" topics={topics} />
-          <SingleArticle path="/articles/:articleID" />
-          {/* //postArticle = /post-article */}
         </Router>
         <Footer />
       </div>
