@@ -16,6 +16,7 @@ class Articles extends Component {
         ) : (
           <h4>{"All articles:"}</h4>
         )}
+
         {articles.map(article => {
           return (
             <div key={article.article_id} className="articleCard">

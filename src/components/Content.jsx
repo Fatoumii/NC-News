@@ -14,7 +14,6 @@ class Content extends Component {
         <TopArticles />
         <Router className="singleArticle">
           <Articles path="/" topic={topic} />
-          {/* <Articles path="/topic/:topic" topic={topic} /> */}
           <SingleArticle path="/:articleID" topic={topic} />
         </Router>
       </>

@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import Content from "./components/Content";
 import Home from "./components/Home";
 import * as api from "./utils";
-import SingleArticle from "./components/SingleArticle";
+
 class App extends Component {
   state = {
     topics: []
