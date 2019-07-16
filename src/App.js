@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Router } from "@reach/router";
 import "./App.css";
-import "./articles.css";
+import "./content.css";
 import Heading from "./components/Heading";
 import Footer from "./components/Footer";
-import Articles from "./components/Articles";
+import Content from "./components/Content";
 import Home from "./components/Home";
 import * as api from "./utils";
+import SingleArticle from "./components/SingleArticle";
 class App extends Component {
   state = {
     topics: []
@@ -18,8 +19,10 @@ class App extends Component {
         <Heading />
         <Router className="content">
           <Home path="/" />
-          <Articles path="/articles" topics={topics} />
-          <Articles path="/topics/:topic" topics={topics} />
+          <Content path="/articles" topics={topics} />
+          <Content path="/topics/:topic" topics={topics} />
+          <SingleArticle path="/articles/:articleID" />
+          {/* //postArticle = /post-article */}
         </Router>
         <Footer />
       </div>
@@ -27,9 +30,6 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    this.fetchTopics();
-  };
-  fetchTopics = () => {
     api.getTopics().then(data => {
       this.setState({ topics: data });
     });

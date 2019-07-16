@@ -7,11 +7,14 @@ const Nav = props => {
     <div className="nav">
       {topics.map(({ slug }) => {
         return (
-          <Link to={`/topics/${slug}`} key={slug}>
+          <Link to={`/topics/${slug}`} key={slug} className="navLinks">
             {slug}
           </Link>
         );
       })}
+      <Link to="/post-article" className="post">
+        {"+"}
+      </Link>
     </div>
   );
 };
