@@ -24,7 +24,10 @@ class Comments extends React.Component {
                 />
                 <div className="innerSingleComment">{comment.body}</div>
               </li>
-              <DeleteComment comment_id={comment.comment_id} />
+              <DeleteComment
+                comment_id={comment.comment_id}
+                deleteCommentLive={this.deleteCommentLive}
+              />
             </div>
           );
         })}
@@ -48,6 +51,10 @@ class Comments extends React.Component {
     this.setState(state => {
       return { comments: [comment, ...this.state.comments] };
     });
+  };
+  deleteCommentLive = response => {
+    const { article_id } = this.props;
+    api.viewComments(article_id).then(comments => this.setState({ comments }));
   };
 }
 

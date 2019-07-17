@@ -6,17 +6,10 @@ class DeleteComment extends React.Component {
     return <button onClick={this.deleteComment}>DELETE COMMENT</button>;
   }
   deleteComment = () => {
-    const { comment_id } = this.props;
+    const { comment_id, deleteCommentLive } = this.props;
     api.delComment(comment_id).then(response => {
-      console.log(response, "response");
+      deleteCommentLive(response);
     });
-    // const { comment_id } = this.props;
-    // api.delComment(comment_id);
-    // this.setState(state => {
-    //   return {
-    //     comment: ""
-    //   };
-    // });
   };
 }
 export default DeleteComment;
