@@ -12,10 +12,9 @@ class Articles extends Component {
     return (
       <div className="articles">
         {this.props.topic ? (
-          <h4>{`Articles on ${this.props.topic[0].toUpperCase() +
-            this.props.topic.slice(1, this.props.topic.length)}:`}</h4>
+          <p className="articlePageHeader">{`ARTICLES ON ${this.props.topic.toUpperCase()}:`}</p>
         ) : (
-          <h4>{"All articles:"}</h4>
+          <p className="articlePageHeader">{"ALL ARTICLES:"}</p>
         )}
         {articles.map(article => {
           return (

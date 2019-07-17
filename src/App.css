@@ -18,8 +18,8 @@ body {
   grid-area: header;
   margin: 0em;
   background-color: rgb(41, 39, 39);
-  color: whitesmoke;
   padding: 20px;
+  color: rgb(230, 224, 224);
 }
 
 .content {
@@ -30,5 +30,5 @@ body {
   grid-area: footer;
   margin: 0em;
   background-color: rgb(41, 39, 39);
-  color: whitesmoke;
+  color: rgb(230, 224, 224);
 }

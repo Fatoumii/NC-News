@@ -18,7 +18,7 @@ class Comments extends React.Component {
             <div>
               <li className="singleComment" key={comment.comment_id}>
                 <Vote
-                  votes={votes}
+                  votes={comment.votes}
                   id={comment.comment_id}
                   section="comments"
                 />
@@ -53,9 +53,13 @@ class Comments extends React.Component {
     });
   };
   deleteCommentLive = response => {
+    //setting the state back to the original comments - excludes the one  deleted
     const { article_id } = this.props;
     api.viewComments(article_id).then(comments => this.setState({ comments }));
   };
 }
 
 export default Comments;
+
+//deletes for 'jessjelly' - button only on her comments
+//adds only for 'jessjelly'

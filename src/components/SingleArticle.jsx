@@ -29,7 +29,7 @@ class SingleArticle extends React.Component {
           <p>{body}</p>
           <p>Article votes: {votes}</p>
           <br />
-          <Comments article_id={article_id} votes={votes} />
+          <Comments article_id={article_id} />
         </div>
 
         <div className="addComment" />

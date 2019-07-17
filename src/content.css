@@ -4,31 +4,34 @@
   grid-template-columns: 1.2fr 5fr;
   grid-template-areas: "nav nav" "topArticles articles";
   border: 1px solid black;
-
   /* overflow-y: scroll; */
 }
-
 .nav {
   grid-area: nav;
-  background-color: rgb(228, 225, 225);
+  background-color: rgb(85, 41, 41);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  float: left;
   text-transform: uppercase;
   padding: 12px;
-}
-.post {
-  border: 1px solid black;
-  padding: 3px;
-  border-radius: 10px;
-  width: 20px;
-  height: 20px;
+  box-shadow: 0px 0px 10px black;
 }
 
+.dropdown {
+  border-radius: 3px;
+  width: 110px;
+  height: 20px;
+  margin: 3px;
+  float: right;
+  background-color: whitesmoke;
+}
 .navLinks {
   padding: 5px;
   text-decoration: underline;
   cursor: pointer;
+  border: 1px blue;
+  color: rgb(207, 200, 200);
 }
 .navLinks:hover {
   transform: scale(1.1);
@@ -37,11 +40,9 @@
 
 .navLinks:link {
   text-decoration: none;
-  color: rgb(61, 59, 59);
 }
 .navLinks:visited {
   text-decoration: none;
-  color: rgb(61, 59, 59);
 }
 
 .topArticles {
@@ -50,26 +51,47 @@
   color: rgb(61, 59, 59);
   font-weight: bold;
   margin: 5px;
-  padding: 5px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px black;
 }
+
+.topArticleTitle {
+  border-radius: 3px 3px 0px 0px;
+  padding: 10px;
+  margin: 0px;
+  background-color: rgb(85, 41, 41);
+  color: rgb(207, 200, 200);
+}
+
+.articlePageHeader {
+  margin: 0px;
+  padding: 10px;
+  background-color: rgb(85, 41, 41);
+  color: rgb(207, 200, 200);
+}
+
 .articles {
   grid-area: articles;
+  border-radius: 3px;
   overflow-y: scroll;
   height: 80vh;
   background-color: whitesmoke;
+  border-radius: 3px;
+  border: 1px solid orange;
+  /* box-shadow: 0px 0px 10px black; */
 }
 
 .articleCard {
   margin: 20px;
-  box-shadow: 0px 0px 5px 2px rgb(224, 222, 222);
+  box-shadow: 2px 2px 7px rgb(139, 133, 133);
   background-color: white;
   border-radius: 2px;
   padding: 10px;
   color: rgb(61, 59, 59);
   cursor: pointer;
-  border: 1px solid black;
   display: grid;
   grid-template-columns: 1.5fr 6fr;
+  height: 10vh;
 }
 .articleCard:hover {
   transform: scale(1.1);
@@ -78,7 +100,12 @@
 
 .articleTitle {
   grid-area: 1/2;
-  border: 1px solid black;
+  height: 10vh;
+  text-decoration: none;
+  background-color: rgb(85, 41, 41);
+  border-radius: 2px;
+  color: rgb(207, 200, 200);
+  /* overflow: hidden; */
 }
 
 .singleArticle {
@@ -87,11 +114,13 @@
   overflow-y: scroll;
   display: grid;
   grid-template-rows: 5fr 1fr;
+  border-radius: 3px;
+  border: 1px solid black;
 }
 .innerSingleArticle {
   padding: 10px;
   grid-area: 1/2;
-  border: 1px solid blue;
+  /* box-shadow: 0px 0px 10px black; */
 }
 
 h6 {
@@ -110,20 +139,29 @@ h6 {
 
 .singleComment {
   box-shadow: 0px 0px 5px 1px rgb(224, 222, 222);
-  border-radius: 2px;
   list-style: none;
-  margin: 5px;
   padding: 20px;
   border: 1px solid red;
   display: grid;
+  height: 10vh;
   grid-template-columns: 1.5fr 6fr;
 }
 .innerSingleComment {
   grid-area: 1/2;
   border: 1px solid black;
-  padding: 10px;
+  height: 10vh;
+  font-size: 10.5px;
+  /* padding: 10px; */
 }
 .addComment {
   grid-area: 2/3;
-  border: 1px solid red;
+  border: 1px solid yellow;
+}
+
+.post {
+  border: 1px solid black;
+  padding: 3px;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
 }

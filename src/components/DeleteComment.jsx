@@ -13,5 +13,3 @@ class DeleteComment extends React.Component {
   };
 }
 export default DeleteComment;
-
-//deletes for 'jessjelly'

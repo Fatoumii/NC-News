@@ -12,6 +12,13 @@ const Nav = props => {
           </Link>
         );
       })}
+
+      {/* <p className="sortby">Sort by:</p> */}
+      <select className="dropdown">
+        <option value="default" />
+        <option value="date">Date</option>
+        <option value="commentCount">Comment Count</option>
+      </select>
     </div>
   );
 };

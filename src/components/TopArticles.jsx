@@ -4,7 +4,7 @@ class TopArticles extends Component {
   render() {
     return (
       <div className="topArticles">
-        <p>TOP ARTICLES</p>
+        <p className="topArticleTitle">TOP ARTICLES</p>
       </div>
     );
   }
