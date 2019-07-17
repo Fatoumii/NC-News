@@ -33,7 +33,10 @@ class SingleArticle extends React.Component {
         </div>
 
         <div className="addComment">
-          <AddComment article_id={article_id} />
+          {/* <AddComment
+            article_id={article_id}
+            addNewComment={this.addNewComment}
+          /> */}
         </div>
       </section>
     );
@@ -44,5 +47,10 @@ class SingleArticle extends React.Component {
       this.setState({ article });
     });
   };
+  // addNewComment = comment => {
+  //   this.setState(state => {
+  //     return { comments: [comment, ...this.state.comments] };
+  //   });
+  // };
 }
 export default SingleArticle;

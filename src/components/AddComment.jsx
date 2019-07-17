@@ -4,9 +4,7 @@ import { navigate } from "@reach/router";
 
 class AddComment extends Component {
   state = {
-    body: "",
-    author: "butterbridge",
-    article_id: this.props.article_id
+    body: ""
   };
   render() {
     return (
@@ -37,19 +35,15 @@ class AddComment extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
     const { article_id } = this.props;
     const { body } = this.state;
 
-    let comment = { body: "", author: "", article_id: 0, votes: 0 };
-    api.postComment(comment, article_id).then(comment => {
-      console.log(comment, "comment");
-      // navigate(`/articles/${article_id}`, { state: { postSuccessful: true } });
+    api.postComment(body, article_id).then(comment => {
+      this.props.addNewComment(comment);
+      this.setState({ body: "" });
     });
     //.catch()
   };
-
-  componentWillUpdate = () => {};
 }
 
 export default AddComment;

@@ -35,7 +35,14 @@ export const votes = async (id, increment, section) => {
 export const postComment = async (body, article_id) => {
   const { data } = await axios.post(
     `${BASE_URL}/articles/${article_id}/comments`,
-    body
+    {
+      body: body,
+      username: "jessjelly"
+    }
   );
   return data.comment;
+};
+
+export const delComment = async comment_id => {
+  const { data } = await axios.delete(`${BASE_URL}/comments/${comment_id}`);
 };

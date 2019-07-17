@@ -1,6 +1,8 @@
 import React from "react";
 import * as api from "../utils";
 import Vote from "./Votes";
+import AddComment from "./AddComment";
+import DeleteComment from "./DeleteComment";
 
 class Comments extends React.Component {
   state = {
@@ -13,12 +15,23 @@ class Comments extends React.Component {
         <h3>Comments: </h3>
         {this.state.comments.map(comment => {
           return (
-            <li className="singleComment" key={comment.comment_id}>
-              <Vote votes={votes} id={comment.comment_id} section="comments" />
-              <div className="innerSingleComment">{comment.body}</div>
-            </li>
+            <div>
+              <li className="singleComment" key={comment.comment_id}>
+                <Vote
+                  votes={votes}
+                  id={comment.comment_id}
+                  section="comments"
+                />
+                <div className="innerSingleComment">{comment.body}</div>
+              </li>
+              <DeleteComment comment_id={comment.comment_id} />
+            </div>
           );
         })}
+        <AddComment
+          article_id={this.props.article_id}
+          addNewComment={this.addNewComment}
+        />
       </div>
     );
   }
@@ -30,6 +43,11 @@ class Comments extends React.Component {
         this.setState({ comments });
       });
     }
+  };
+  addNewComment = comment => {
+    this.setState(state => {
+      return { comments: [comment, ...this.state.comments] };
+    });
   };
 }
 

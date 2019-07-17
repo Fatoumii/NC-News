@@ -15,6 +15,7 @@ class Vote extends Component {
           onClick={() => {
             this.vote(1);
           }}
+          disabled={voteChange === 1}
         >
           +
         </button>
@@ -22,6 +23,7 @@ class Vote extends Component {
           onClick={() => {
             this.vote(-1);
           }}
+          disabled={voteChange === -1}
         >
           -
         </button>
