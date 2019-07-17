@@ -24,3 +24,18 @@ export const viewComments = async article_id => {
   );
   return data.comment;
 };
+
+export const votes = async (id, increment, section) => {
+  const { data } = await axios.patch(`${BASE_URL}/${section}/${id}`, {
+    inc_votes: increment
+  });
+  return data;
+};
+
+export const postComment = async (body, article_id) => {
+  const { data } = await axios.post(
+    `${BASE_URL}/articles/${article_id}/comments`,
+    body
+  );
+  return data.comment;
+};

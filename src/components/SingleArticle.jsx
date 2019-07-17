@@ -3,6 +3,7 @@ import * as api from "../utils";
 import "../content.css";
 import AddComment from "./AddComment";
 import Comments from "./Comments";
+import Vote from "./Votes";
 
 class SingleArticle extends React.Component {
   state = {
@@ -10,11 +11,14 @@ class SingleArticle extends React.Component {
   };
   render() {
     const {
-      article: { title, body, author, created_at, article_id }
+      article: { title, body, author, created_at, article_id, votes }
     } = this.state;
     return (
       <section>
         <div className="innerSingleArticle">
+          {this.props.location.state.postSuccessful && (
+            <p>Comment posted successfully!</p>
+          )}
           <h3>{title}</h3>
           <h6 className="author">
             <i>{author}</i>
@@ -23,12 +27,13 @@ class SingleArticle extends React.Component {
             <i>{created_at}</i>
           </h6>
           <p>{body}</p>
+          <p>Article votes: {votes}</p>
           <br />
-          <Comments article_id={article_id} />
+          <Comments article_id={article_id} votes={votes} />
         </div>
 
         <div className="addComment">
-          <AddComment />
+          <AddComment article_id={article_id} />
         </div>
       </section>
     );

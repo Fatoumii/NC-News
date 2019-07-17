@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
 import * as api from "../utils";
+import Vote from "./Votes";
 
 class Articles extends Component {
   state = {
@@ -16,11 +17,18 @@ class Articles extends Component {
         ) : (
           <h4>{"All articles:"}</h4>
         )}
-
         {articles.map(article => {
           return (
             <div key={article.article_id} className="articleCard">
-              <Link to={`/articles/${article.article_id}`}>
+              <Vote
+                votes={article.votes}
+                id={article.article_id}
+                section="articles"
+              />
+              <Link
+                to={`/articles/${article.article_id}`}
+                className="articleTitle"
+              >
                 <h4>{article.title}</h4>
               </Link>
             </div>
