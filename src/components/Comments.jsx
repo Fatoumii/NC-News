@@ -6,31 +6,38 @@ import DeleteComment from "./DeleteComment";
 
 class Comments extends React.Component {
   state = {
-    comments: []
+    comments: [],
+    commentPosted: false
   };
   render() {
     const { votes } = this.props;
     return (
       <div>
         <h3>Comments: </h3>
-        {this.state.comments.map(comment => {
-          return (
-            <div>
-              <li className="singleComment" key={comment.comment_id}>
-                <Vote
-                  votes={comment.votes}
-                  id={comment.comment_id}
-                  section="comments"
-                />
-                <div className="innerSingleComment">{comment.body}</div>
-              </li>
-              <DeleteComment
-                comment_id={comment.comment_id}
-                deleteCommentLive={this.deleteCommentLive}
-              />
-            </div>
-          );
-        })}
+        {this.state.commentPosted
+          ? "Posted successfully!"
+          : this.state.comments.map(comment => {
+              return (
+                <div>
+                  <li className="singleComment" key={comment.comment_id}>
+                    <Vote
+                      votes={comment.votes}
+                      id={comment.comment_id}
+                      section="comments"
+                    />
+                    <div className="innerSingleComment">
+                      {comment.body} <br />
+                      {comment.author}
+                      {comment.created_at}
+                    </div>
+                  </li>
+                  <DeleteComment
+                    comment_id={comment.comment_id}
+                    deleteCommentLive={this.deleteCommentLive}
+                  />
+                </div>
+              );
+            })}
         <AddComment
           article_id={this.props.article_id}
           addNewComment={this.addNewComment}
@@ -47,7 +54,10 @@ class Comments extends React.Component {
   };
   addNewComment = comment => {
     this.setState(state => {
-      return { comments: [comment, ...this.state.comments] };
+      return {
+        comments: [comment, ...this.state.comments],
+        commentPosted: true //not showing rest of comments when posted
+      };
     });
   };
   deleteCommentLive = response => {

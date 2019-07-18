@@ -21,9 +21,6 @@ class SingleArticle extends React.Component {
           "Loading..."
         ) : (
           <div className="innerSingleArticle">
-            {this.props.location.state.postSuccessful && (
-              <p>Comment posted successfully!</p>
-            )}
             <h3>{title}</h3>
             <h6 className="author">
               <i>{author}</i>

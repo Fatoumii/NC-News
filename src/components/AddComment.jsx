@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import * as api from "../utils";
-import { navigate } from "@reach/router";
 
 class AddComment extends Component {
   state = {
