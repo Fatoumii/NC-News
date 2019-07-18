@@ -14,7 +14,11 @@ class TopArticles extends Component {
         <p className="topArticleTitle">TOP ARTICLES</p>
         <h5>
           {articles.map(article => {
-            return <li>{article.title}</li>;
+            return (
+              <li key={article.article_id} className="topArticleNames">
+                {article.title}
+              </li>
+            );
           })}
         </h5>
       </div>

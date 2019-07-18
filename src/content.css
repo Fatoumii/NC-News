@@ -162,3 +162,9 @@ h6 {
   width: 20px;
   height: 20px;
 }
+
+.topArticleNames {
+  padding: 7px;
+  border: 1px solid black;
+  margin: 3px;
+}

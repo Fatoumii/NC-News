@@ -14,9 +14,8 @@ const Nav = props => {
         );
       })}
 
-      {/* <p className="sortby">Sort by:</p> */}
       <select className="dropdown">
-        <option value="default" />
+        <option value="default">Sort-by:</option>
         <option value="date">Date</option>
         <option value="commentCount">Comment Count</option>
       </select>
