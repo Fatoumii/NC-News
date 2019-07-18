@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../utils";
+import { Link } from "@reach/router";
 
 class TopArticles extends Component {
   state = {
@@ -16,7 +17,9 @@ class TopArticles extends Component {
           {articles.map(article => {
             return (
               <li key={article.article_id} className="topArticleNames">
-                {article.title}
+                <Link to={`/articles/${article.article_id}`}>
+                  {article.title}
+                </Link>
               </li>
             );
           })}
