@@ -7,12 +7,23 @@ import propType from "prop-types";
 class Articles extends Component {
   state = {
     articles: [],
+    sort_by: "",
     isLoading: true
   };
   render() {
     const { articles, isLoading } = this.state;
     return (
       <div className="singleArticles">
+        <div className="dropdown">
+          <form onSubmit={this.handleSubmit}>
+            <select className="sortby" onChange={this.handleChange}>
+              <option>...</option>
+              <option value="created_at">Date</option>
+              <option value="comment_count">Comment Count</option>
+            </select>
+            <button type="submit">Sort</button>
+          </form>
+        </div>
         {isLoading ? (
           "Loading..."
         ) : this.props.topic ? (
@@ -51,7 +62,8 @@ class Articles extends Component {
   };
 
   componentDidMount = () => {
-    this.fetchArticles();
+    const { topic } = this.props;
+    this.fetchArticles({ topic });
   };
 
   fetchArticles = () => {
@@ -60,9 +72,23 @@ class Articles extends Component {
       this.setState({ articles, isLoading: false });
     });
   };
+
+  handleChange = event => {
+    this.setState({ sort_by: event.target.value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const { topic } = this.props;
+    const { sort_by } = this.state;
+    api.getArticles(topic, sort_by).then(articles => {
+      this.setState({ articles });
+    });
+  };
 }
 
 Articles.propType = {
-  topic: propType.string.isRequired
+  topic: propType.string.isRequired,
+  sort_by: propType.string.isRequired
 };
 export default Articles;

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
 import propType from "prop-types";
-import Sortby from "./Sortby";
 
 const Nav = props => {
   const { topics } = props;
@@ -14,7 +13,6 @@ const Nav = props => {
           </Link>
         );
       })}
-      <Sortby topics={topics} />
     </div>
   );
 };

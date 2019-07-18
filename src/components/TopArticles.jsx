@@ -32,9 +32,9 @@ class TopArticles extends Component {
     );
   }
   fetchTopArticles = () => {
-    const { topic, sort_by = "votes", order } = this.props;
-    api.getArticles(topic, sort_by, order).then(articles => {
-      this.setState({ articles, sort_by, order });
+    const { topic, sort_by = "votes" } = this.props;
+    api.getArticles(topic, sort_by).then(articles => {
+      this.setState({ articles, sort_by });
     });
   };
   componentDidMount = () => {
