@@ -112,6 +112,10 @@
   background-color: rgb(85, 41, 41);
   color: rgb(207, 200, 200);
 }
+.articleAuthor {
+  float: right;
+  font-size: 10px;
+}
 
 .singleArticle {
   background-color: whitesmoke;
@@ -143,7 +147,7 @@ h6 {
 .singleComment {
   box-shadow: 0px 0px 5px 1px rgb(224, 222, 222);
   list-style: none;
-  padding: 20px;
+  padding: 10px;
   display: grid;
   height: 10vh;
   margin: 5px 20px;
@@ -152,7 +156,7 @@ h6 {
 }
 .innerSingleComment {
   grid-area: 1/2;
-  border: 1px solid chartreuse;
+  /* border: 1px solid chartreuse; */
   height: 10vh;
   font-size: 10.5px;
   overflow: scroll;

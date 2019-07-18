@@ -46,6 +46,7 @@ class Articles extends Component {
                     className="articleTitle"
                   >
                     <h4>{article.title}</h4>
+                    <div className="articleAuthor">{article.author}</div>
                   </Link>
                 </div>
               );

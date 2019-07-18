@@ -27,7 +27,9 @@ class Comments extends React.Component {
                     />
                     <div className="innerSingleComment">
                       {comment.body} <br />
+                      <br />
                       {comment.author}
+                      <br />
                       {comment.created_at}
                     </div>
                   </li>
