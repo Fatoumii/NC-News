@@ -4,7 +4,13 @@ import propType from "prop-types";
 
 class DeleteComment extends React.Component {
   render() {
-    return <button onClick={this.deleteComment}>DELETE COMMENT</button>;
+    return (
+      <div>
+        {this.props.username === "jessjelly" ? (
+          <button onClick={this.deleteComment}>DELETE COMMENT</button>
+        ) : null}
+      </div>
+    );
   }
   deleteComment = () => {
     const { comment_id, deleteCommentLive } = this.props;
@@ -15,6 +21,7 @@ class DeleteComment extends React.Component {
 }
 DeleteComment.propType = {
   comment_id: propType.number.isRequired,
+  username: propType.string.isRequired,
   deleteCommentLive: propType.func.isRequired
 };
 export default DeleteComment;

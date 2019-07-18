@@ -33,6 +33,7 @@ class Comments extends React.Component {
                   </li>
                   <DeleteComment
                     comment_id={comment.comment_id}
+                    username={comment.author}
                     deleteCommentLive={this.deleteCommentLive}
                   />
                 </div>
