@@ -18,13 +18,21 @@
   box-shadow: 0px 0px 10px black;
 }
 
-.dropdown {
+.sortby {
   border-radius: 3px;
   width: 110px;
   height: 20px;
   margin: 3px;
   float: right;
   background-color: whitesmoke;
+}
+.order {
+  background-color: whitesmoke;
+  border-radius: 3px;
+  width: 110px;
+  height: 20px;
+  margin: 3px;
+  float: right;
 }
 .navLinks {
   padding: 5px;
@@ -164,7 +172,14 @@ h6 {
 }
 
 .topArticleNames {
-  padding: 7px;
-  border: 1px solid black;
-  margin: 3px;
+  padding: 5px;
+  text-decoration: none;
+  list-style: none;
+  margin: 2px;
+  color: rgb(41, 39, 39);
+  border-bottom: 1px solid rgb(177, 172, 172);
+}
+.topArticleNames:hover {
+  transform: scale(1.02);
+  transition: 0.2s;
 }

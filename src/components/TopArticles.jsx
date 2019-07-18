@@ -17,7 +17,11 @@ class TopArticles extends Component {
           {articles.map(article => {
             return (
               <li key={article.article_id} className="topArticleNames">
-                <Link to={`/articles/${article.article_id}`}>
+                >
+                <Link
+                  to={`/articles/${article.article_id}`}
+                  className="topArticleNames"
+                >
                   {article.title}
                 </Link>
               </li>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "@reach/router";
 import propType from "prop-types";
+import Sortby from "./Sortby";
 
 const Nav = props => {
   const { topics } = props;
@@ -13,12 +14,7 @@ const Nav = props => {
           </Link>
         );
       })}
-
-      <select className="dropdown">
-        <option value="default">Sort-by:</option>
-        <option value="date">Date</option>
-        <option value="commentCount">Comment Count</option>
-      </select>
+      <Sortby />
     </div>
   );
 };
