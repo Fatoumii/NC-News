@@ -27,7 +27,7 @@ class Articles extends Component {
         {isLoading ? (
           "Loading..."
         ) : this.props.topic ? (
-          <p className="articlePageHeader">{`ARTICLES ON ${this.props.topic.toUpperCase()}:`}</p>
+          <p className="articlePageHeader">{`ARTICLES ON ${this.props.topic.toUpperCase()}`}</p>
         ) : (
           <p className="articlePageHeader">{"ALL ARTICLES:"}</p>
         )}
@@ -57,12 +57,13 @@ class Articles extends Component {
   componentDidUpdate = (prevProps, prevState) => {
     const { topic } = this.props;
     if (topic !== prevProps.topic) {
-      this.fetchArticles();
+      this.fetchArticles({ topic });
     }
   };
 
   componentDidMount = () => {
     const { topic } = this.props;
+
     this.fetchArticles({ topic });
   };
 

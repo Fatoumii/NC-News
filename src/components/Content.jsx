@@ -12,11 +12,15 @@ class Content extends Component {
     return (
       <>
         <Nav topics={topics} />
-        <TopArticles />
-        <Router className="singleArticle">
-          <Articles path="/" topic={topic} />
-          <SingleArticle path="/:articleID" topic={topic} />
-        </Router>
+        <div className="innerContent">
+          <TopArticles />
+        </div>
+        <div className="innerContent">
+          <Router className="singleArticle">
+            <Articles path="/" topic={topic} />
+            <SingleArticle path="/:articleID" topic={topic} />
+          </Router>
+        </div>
       </>
     );
   }

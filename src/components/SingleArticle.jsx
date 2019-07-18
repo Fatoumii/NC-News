@@ -27,7 +27,7 @@ class SingleArticle extends React.Component {
             <h6 className="date">
               <i>{created_at}</i>
             </h6>
-            <p>{body}</p>
+            <p className="singleArticleBody">{body}</p>
             <p>Article votes: {votes}</p>
             <br />
             <Comments article_id={article_id} />
