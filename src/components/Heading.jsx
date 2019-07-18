@@ -3,8 +3,8 @@ import { Link } from "@reach/router";
 
 const Heading = () => {
   return (
-    <Link to="/articles">
-      <h1 className="heading">NC News</h1>
+    <Link to="/articles" className="heading">
+      <h1>NC News</h1>
     </Link>
   );
 };

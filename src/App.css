@@ -20,6 +20,7 @@ body {
   background-color: rgb(41, 39, 39);
   padding: 20px;
   color: rgb(230, 224, 224);
+  text-decoration: none;
 }
 
 .content {

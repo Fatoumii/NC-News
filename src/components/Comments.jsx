@@ -39,13 +39,11 @@ class Comments extends React.Component {
     );
   }
 
-  componentDidUpdate = (prevProps, prevState) => {
+  componentDidMount = () => {
     const { article_id } = this.props;
-    if (article_id !== prevProps.article_id) {
-      api.viewComments(article_id).then(comments => {
-        this.setState({ comments });
-      });
-    }
+    api.viewComments(article_id).then(comments => {
+      this.setState({ comments });
+    });
   };
   addNewComment = comment => {
     this.setState(state => {
@@ -60,6 +58,3 @@ class Comments extends React.Component {
 }
 
 export default Comments;
-
-//deletes for 'jessjelly' - button only on her comments
-//adds only for 'jessjelly'
