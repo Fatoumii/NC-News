@@ -4,11 +4,9 @@ import * as api from "../utils";
 class Sortby extends React.Component {
   state = {
     articles: [],
-    sort_by: "",
-    order: ""
+    sort_by: "created_at"
   };
   render() {
-    console.log(this.state.articles);
     return (
       <div className="dropdown">
         <form onSubmit={this.handleSubmit}>
@@ -18,39 +16,27 @@ class Sortby extends React.Component {
             <option value="comment_count">Comment Count</option>
           </select>
         </form>
-        {/* <form onSubmit={this.handleSubmit}>
-          <select className="order" onChange={this.handleChange}>
-            <option value="asc">Ascending</option>
-            <option value="desc">Descending</option>
-          </select>
-        </form> */}
       </div>
     );
   }
 
-  componentDidMount = () => {
-    this.fetchArticles();
-  };
-
-  fetchArticles = () => {
-    const { topic, sort_by, order } = this.props;
-    api.getArticles(topic, sort_by, order).then(articles => {
-      this.setState({ articles, isLoading: false });
-    });
-  };
-
   handleSubmit = event => {
     event.preventDefault();
+    const { topic, sort_by } = this.props;
+    api.getArticles(topic, sort_by).then(articles => {
+      console.log(articles);
+    });
+    // const { topic, sort_by } = this.props;
+    // const { value } = event.target;
+    // api.getArticles(topic, sort_by).then(articles => {
+    //   console.log(value);
+    //   return articles.map(article => console.log(article));
+    // });
   };
 
   handleChange = event => {
-    const { topic, sort_by = "created_at", order = "asc" } = this.props;
-    const { value } = event.target;
-    console.log(value);
-    api.getArticles(topic, sort_by, order).then(articles => {
-      // if (value === "created_at" && ) {
-      // }
-    });
+    console.log(event.target.value);
+    this.setState({ sort_by: event.target.value });
   };
 }
 
