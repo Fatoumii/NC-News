@@ -183,3 +183,7 @@ h6 {
   transform: scale(1.02);
   transition: 0.2s;
 }
+
+.dropdown {
+  display: hidden;
+}

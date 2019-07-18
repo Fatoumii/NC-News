@@ -14,7 +14,7 @@ const Nav = props => {
           </Link>
         );
       })}
-      <Sortby />
+      <Sortby topics={topics} />
     </div>
   );
 };

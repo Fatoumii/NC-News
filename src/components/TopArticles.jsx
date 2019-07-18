@@ -5,8 +5,8 @@ import { Link } from "@reach/router";
 class TopArticles extends Component {
   state = {
     articles: [],
-    sort_by: "votes",
-    order: "asc"
+    sort_by: "",
+    order: ""
   };
   render() {
     const { articles } = this.state;
