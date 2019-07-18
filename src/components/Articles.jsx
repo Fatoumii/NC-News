@@ -80,10 +80,9 @@ class Articles extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const { topic } = this.props;
-    const { sort_by } = this.state;
-    api.getArticles(topic, sort_by).then(articles => {
-      this.setState({ articles });
-    });
+    const { sort_by } = this.state; //new state
+
+    this.fetchArticles({ sort_by });
   };
 }
 
