@@ -1,5 +1,6 @@
 import React from "react";
 import * as api from "../utils";
+import propType from "prop-types";
 
 class DeleteComment extends React.Component {
   render() {
@@ -12,4 +13,8 @@ class DeleteComment extends React.Component {
     });
   };
 }
+DeleteComment.propType = {
+  comment_id: propType.number.isRequired,
+  deleteCommentLive: propType.func.isRequired
+};
 export default DeleteComment;

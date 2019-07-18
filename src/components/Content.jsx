@@ -4,6 +4,7 @@ import TopArticles from "./TopArticles";
 import Articles from "./Articles";
 import SingleArticle from "./SingleArticle";
 import { Router } from "@reach/router";
+import propType from "prop-types";
 
 class Content extends Component {
   render() {
@@ -20,5 +21,9 @@ class Content extends Component {
     );
   }
 }
+Content.propType = {
+  topic: propType.string.isRequired,
+  topics: propType.string.isRequired
+};
 
 export default Content;

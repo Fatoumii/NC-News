@@ -3,6 +3,7 @@ import * as api from "../utils";
 import Vote from "./Votes";
 import AddComment from "./AddComment";
 import DeleteComment from "./DeleteComment";
+import propType from "prop-types";
 
 class Comments extends React.Component {
   state = {
@@ -10,7 +11,6 @@ class Comments extends React.Component {
     commentPosted: false
   };
   render() {
-    const { votes } = this.props;
     return (
       <div>
         <h3>Comments: </h3>
@@ -66,5 +66,9 @@ class Comments extends React.Component {
     api.viewComments(article_id).then(comments => this.setState({ comments }));
   };
 }
+
+Comments.propType = {
+  article_id: propType.number.isRequired
+};
 
 export default Comments;

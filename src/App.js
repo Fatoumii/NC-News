@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Content from "./components/Content";
 import Home from "./components/Home";
 import * as api from "./utils";
+import Error from "./components/Error";
 
 class App extends Component {
   state = {
@@ -21,6 +22,7 @@ class App extends Component {
           <Home path="/" />
           <Content path="/articles/*" topics={topics} />
           <Content path="/topics/:topic" topics={topics} />
+          <Error default path="/error" />
         </Router>
         <Footer />
       </div>

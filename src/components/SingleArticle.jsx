@@ -1,9 +1,8 @@
 import React from "react";
 import * as api from "../utils";
 import "../content.css";
-import AddComment from "./AddComment";
 import Comments from "./Comments";
-import Vote from "./Votes";
+import propType from "prop-types";
 
 class SingleArticle extends React.Component {
   state = {
@@ -45,4 +44,8 @@ class SingleArticle extends React.Component {
     });
   };
 }
+
+SingleArticle.propType = {
+  articleID: propType.number.isRequired
+};
 export default SingleArticle;

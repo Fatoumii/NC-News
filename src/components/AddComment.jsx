@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../utils";
+import propType from "prop-types";
 
 class AddComment extends Component {
   state = {
@@ -44,5 +45,8 @@ class AddComment extends Component {
     //.catch()
   };
 }
+AddComment.propType = {
+  article_id: propType.number.isRequired
+};
 
 export default AddComment;

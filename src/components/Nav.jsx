@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
+import propType from "prop-types";
 
 const Nav = props => {
   const { topics } = props;
@@ -21,6 +22,9 @@ const Nav = props => {
       </select>
     </div>
   );
+};
+Nav.propType = {
+  topics: propType.string.isRequired
 };
 
 export default Nav;

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "@reach/router";
 import * as api from "../utils";
 import Vote from "./Votes";
+import propType from "prop-types";
 
 class Articles extends Component {
   state = {
@@ -60,4 +61,8 @@ class Articles extends Component {
     });
   };
 }
+
+Articles.propType = {
+  topic: propType.string.isRequired
+};
 export default Articles;

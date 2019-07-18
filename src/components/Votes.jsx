@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../utils";
+import propType from "prop-types";
 
 class Vote extends Component {
   state = {
@@ -46,4 +47,8 @@ class Vote extends Component {
     });
   };
 }
+
+Vote.propType = {
+  votes: propType.number.isRequired
+};
 export default Vote;
