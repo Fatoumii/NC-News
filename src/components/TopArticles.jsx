@@ -10,23 +10,21 @@ class TopArticles extends Component {
     const { articles } = this.state;
     return (
       <div className="topArticles">
-        <p className="topArticleTitle">TOP ARTICLES</p>
-        <h5>
-          {/* {articles.filter(article => article.votes > 5)} */}
-          {articles.map(article => {
-            return (
-              <li key={article.article_id} className="topArticleNames">
-                >
-                <Link
-                  to={`/articles/${article.article_id}`}
-                  className="topArticleNames"
-                >
-                  {article.title}
-                </Link>
-              </li>
-            );
-          })}
-        </h5>
+        <h5 className="topArticleTitle">TOP ARTICLES</h5>
+        {/* {articles.filter(article => article.votes > 5)} */}
+        {articles.map(article => {
+          return (
+            <li key={article.article_id} className="topArticleNames">
+              >
+              <Link
+                to={`/articles/${article.article_id}`}
+                className="topArticleNames"
+              >
+                {article.title}
+              </Link>
+            </li>
+          );
+        })}
       </div>
     );
   }

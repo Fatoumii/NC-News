@@ -20,27 +20,25 @@ class Comments extends React.Component {
           <div>
             {this.state.comments.map(comment => {
               return (
-                <div>
-                  <li className="singleComment" key={comment.comment_id}>
-                    <Vote
-                      votes={comment.votes}
-                      id={comment.comment_id}
-                      section="comments"
-                    />
-                    <div className="innerSingleComment">
-                      {comment.body} <br />
-                      <br />
-                      {comment.author}
-                      <br />
-                      {comment.created_at}
-                    </div>
-                  </li>
+                <li className="singleComment" key={comment.comment_id}>
+                  <Vote
+                    votes={comment.votes}
+                    id={comment.comment_id}
+                    section="comments"
+                  />
+                  <div className="innerSingleComment">
+                    {comment.body} <br />
+                    <br />
+                    {comment.author}
+                    <br />
+                    {comment.created_at}
+                  </div>
                   <DeleteComment
                     comment_id={comment.comment_id}
                     username={comment.author}
                     deleteCommentLive={this.deleteCommentLive}
                   />
-                </div>
+                </li>
               );
             })}
           </div>
@@ -55,7 +53,7 @@ class Comments extends React.Component {
 
   componentDidMount = () => {
     const { article_id } = this.props;
-    api.viewComments(article_id).then(comments => {
+    api.getComments(article_id).then(comments => {
       this.setState({ comments });
     });
   };
@@ -70,7 +68,7 @@ class Comments extends React.Component {
   deleteCommentLive = response => {
     //setting the state back to the original comments - excludes the one  deleted
     const { article_id } = this.props;
-    api.viewComments(article_id).then(comments => this.setState({ comments }));
+    api.getComments(article_id).then(comments => this.setState({ comments }));
   };
 }
 

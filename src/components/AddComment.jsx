@@ -8,27 +8,25 @@ class AddComment extends Component {
   };
   render() {
     return (
-      <section>
-        <form onSubmit={this.handleSubmit} className="form">
-          <p>Add comment:</p>
-          <label>
-            <textarea
-              rows="4"
-              cols="30"
-              placeholder="Leave a comment here..."
-              value={this.state.body}
-              onChange={this.handleChange}
-            />
-          </label>
-          <button
-            className="submit"
-            type="submit"
-            disabled={this.state.body.length === 0}
-          >
-            Submit
-          </button>
-        </form>
-      </section>
+      <form onSubmit={this.handleSubmit} className="form">
+        <p>Add comment:</p>
+        <label>
+          <textarea
+            rows="4"
+            cols="30"
+            placeholder="Leave a comment here..."
+            value={this.state.body}
+            onChange={this.handleChange}
+          />
+        </label>
+        <button
+          className="submit"
+          type="submit"
+          disabled={this.state.body.length === 0}
+        >
+          Submit
+        </button>
+      </form>
     );
   }
 

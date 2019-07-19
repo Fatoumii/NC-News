@@ -15,23 +15,20 @@ class Articles extends Component {
     const { articles, isLoading } = this.state;
     return (
       <div className="singleArticles">
-        <div className="dropdown">
-          <form onSubmit={this.handleSubmit}>
-            <select className="sortby" onChange={this.handleChange}>
-              <option>...</option>
-              <option value="created_at desc">Date (descending)</option>
-              <option value="created_at asc">Date (ascending)</option>
-              <option value="comment_count desc">
-                Comment Count (descending)
-              </option>
-              <option value="comment_count asc">
-                Comment Count (ascending)
-              </option>
-              <option value="votes desc">Vote (descending)</option>
-              <option value="votes asc">Vote (ascending)</option>
-            </select>
-          </form>
-        </div>
+        <form onSubmit={this.handleSubmit}>
+          <select className="sortby" onChange={this.handleChange}>
+            <option>Sort by:</option>
+            <option value="created_at desc">Date (descending)</option>
+            <option value="created_at asc">Date (ascending)</option>
+            <option value="comment_count desc">
+              Comment Count (descending)
+            </option>
+            <option value="comment_count asc">Comment Count (ascending)</option>
+            <option value="votes desc">Vote (descending)</option>
+            <option value="votes asc">Vote (ascending)</option>
+          </select>
+        </form>
+
         {isLoading ? (
           "Loading..."
         ) : this.props.topic ? (
@@ -54,6 +51,8 @@ class Articles extends Component {
                     className="articleTitle"
                   >
                     <h4>{article.title}</h4>
+                    {article.created_at}
+                    {article.comment_count}
                     <div className="articleAuthor">{article.author}</div>
                   </Link>
                 </div>

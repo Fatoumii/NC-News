@@ -33,7 +33,6 @@ class SingleArticle extends React.Component {
             <Comments article_id={article_id} />
           </div>
         )}
-        <div className="addComment" />
       </section>
     );
   }
@@ -43,7 +42,12 @@ class SingleArticle extends React.Component {
       this.setState({ article, isLoading: false });
     });
   };
-  //componentDidUpdate
+  componentDidUpdate = (prevProps, prevState) => {
+    const { articleID } = this.props;
+    if (articleID !== prevProps.articleID) {
+      //...
+    }
+  };
 }
 
 SingleArticle.propType = {

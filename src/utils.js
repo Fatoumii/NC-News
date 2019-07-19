@@ -18,14 +18,14 @@ export const singleArticle = async article_id => {
   return data.article;
 };
 
-export const viewComments = async article_id => {
+export const getComments = async article_id => {
   const { data } = await axios.get(
     `${BASE_URL}/articles/${article_id}/comments`
   );
   return data.comment;
 };
 
-export const votes = async (id, increment, section) => {
+export const updateVotes = async (id, increment, section) => {
   const { data } = await axios.patch(`${BASE_URL}/${section}/${id}`, {
     inc_votes: increment
   });
