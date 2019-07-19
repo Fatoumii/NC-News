@@ -76,6 +76,7 @@ class Articles extends Component {
   };
 
   handleChange = event => {
+    console.log(event.target.value);
     this.setState({ sort_by: event.target.value });
   };
 
@@ -83,7 +84,6 @@ class Articles extends Component {
     event.preventDefault();
     const { topic } = this.props;
     const { sort_by } = this.state; //new state
-
     this.fetchArticles({ sort_by });
   };
 }
