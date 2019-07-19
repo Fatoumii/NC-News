@@ -14,9 +14,11 @@ class Comments extends React.Component {
     return (
       <div>
         <h3>Comments: </h3>
-        {this.state.commentPosted
-          ? "Posted successfully!"
-          : this.state.comments.map(comment => {
+        {this.state.commentPosted ? (
+          "Posted successfully!"
+        ) : (
+          <div>
+            {this.state.comments.map(comment => {
               return (
                 <div>
                   <li className="singleComment" key={comment.comment_id}>
@@ -41,6 +43,8 @@ class Comments extends React.Component {
                 </div>
               );
             })}
+          </div>
+        )}
         <AddComment
           article_id={this.props.article_id}
           addNewComment={this.addNewComment}

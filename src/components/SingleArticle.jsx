@@ -43,6 +43,7 @@ class SingleArticle extends React.Component {
       this.setState({ article, isLoading: false });
     });
   };
+  //componentDidUpdate
 }
 
 SingleArticle.propType = {

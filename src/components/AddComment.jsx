@@ -46,7 +46,6 @@ class AddComment extends Component {
       this.props.addNewComment(comment);
       this.setState({ body: "" });
     });
-    //.catch()
   };
 }
 AddComment.propType = {

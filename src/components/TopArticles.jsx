@@ -4,9 +4,7 @@ import { Link } from "@reach/router";
 
 class TopArticles extends Component {
   state = {
-    articles: [],
-    sort_by: "",
-    order: ""
+    articles: []
   };
   render() {
     const { articles } = this.state;
@@ -14,6 +12,7 @@ class TopArticles extends Component {
       <div className="topArticles">
         <p className="topArticleTitle">TOP ARTICLES</p>
         <h5>
+          {/* {articles.filter(article => article.votes > 5)} */}
           {articles.map(article => {
             return (
               <li key={article.article_id} className="topArticleNames">
