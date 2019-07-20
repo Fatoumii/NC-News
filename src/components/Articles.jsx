@@ -53,11 +53,11 @@ class Articles extends Component {
                   >
                     <h4>{article.title}</h4>
 
-                    <p className="articleAuthorDate">
+                    <h5 className="articleAuthorDate">
                       {article.created_at}
                       {article.author}
                       {/* Comments: {article.comment_count} popup?*/}
-                    </p>
+                    </h5>
                   </Link>
                 </div>
               );
@@ -89,9 +89,9 @@ class Articles extends Component {
       this.setState({ articles, isLoading: false });
     } catch (err) {
       navigate("/error", {
-        // state: {
-        //   message: "Oops! The page could not be found."
-        // },
+        state: {
+          message: "Oops! The page could not be found."
+        },
         replace: true
       });
     }

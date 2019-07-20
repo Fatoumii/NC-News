@@ -116,6 +116,9 @@ li.topArticleNames {
 }
 
 .articleCard {
+  margin-right: 3px;
+  margin-left: 3px;
+  /* margin: 0px 3px 10px 3px; */
   margin-bottom: 10px;
   box-shadow: 2px 2px 7px rgb(139, 133, 133);
   background-color: white;
@@ -128,8 +131,8 @@ li.topArticleNames {
   height: 10vh;
 }
 .articleCard:hover {
-  transform: scale(1.05);
-  transition: 0.3s;
+  transform: scale(1.01);
+  transition: 0.2s;
 }
 
 .articleTitle {
@@ -183,7 +186,7 @@ h6 {
 .innerSingleComment {
   grid-area: 1/2;
   height: 10vh;
-  font-size: 10.5px;
+  font-size: 12px;
   overflow: scroll;
   text-align: justify;
   margin: 0px;
@@ -210,6 +213,9 @@ h6 {
 .articleAuthorDate {
   border: 1px solid black;
   display: inline;
+}
+.deleteButton {
+  padding: 3px;
 }
 
 @media only screen and (max-width: 600px) {

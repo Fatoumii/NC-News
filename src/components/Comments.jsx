@@ -37,9 +37,11 @@ class Comments extends React.Component {
                   {comment.body}
                   <br />
                   <br />
-                  {comment.author}
-                  <br />
-                  {comment.created_at}
+                  <i>
+                    {comment.author}
+                    <br />
+                    {comment.created_at}
+                  </i>
                 </div>
                 <DeleteComment
                   comment_id={comment.comment_id}

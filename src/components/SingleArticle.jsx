@@ -22,11 +22,11 @@ class SingleArticle extends React.Component {
         ) : (
           <div className="innerSingleArticle">
             <h3>{title}</h3>
-            <h6>
+            <h5>
               Author: <i>{author}</i>
               <br />
               <i>{created_at}</i>
-            </h6>
+            </h5>
             <p className="singleArticleBody">{body}</p>
             <p>Article votes: {votes}</p>
             <br />
@@ -43,9 +43,9 @@ class SingleArticle extends React.Component {
       this.setState({ article, isLoading: false });
     } catch (err) {
       navigate("/error", {
-        // state: {
-        //   message: "Oops! The page could not be found."
-        // },
+        state: {
+          message: "Oops! The page could not be found."
+        },
         replace: true
       });
     }
