@@ -10,9 +10,8 @@ class TopArticles extends Component {
     const { articles } = this.state;
     return (
       <div className="topArticles">
-        <h5 className="topArticleTitle">TOP ARTICLES</h5>
-        {/* {articles.filter(article => article.votes > 5)} */}
-        {articles.map(article => {
+        <p className="topArticleTitle">TOP ARTICLES</p>
+        {articles.slice(0, 5).map(article => {
           return (
             <li key={article.article_id} className="topArticleNames">
               >

@@ -3,6 +3,7 @@ import { Link } from "@reach/router";
 import * as api from "../utils";
 import Vote from "./Votes";
 import propType from "prop-types";
+import { navigate } from "@reach/router/lib/history";
 
 class Articles extends Component {
   state = {
@@ -34,7 +35,7 @@ class Articles extends Component {
         ) : this.props.topic ? (
           <p className="articlePageHeader">{`ARTICLES ON ${this.props.topic.toUpperCase()}`}</p>
         ) : (
-          <p className="articlePageHeader">{"ALL ARTICLES:"}</p>
+          <p className="articlePageHeader">{"ALL ARTICLES"}</p>
         )}
         {isLoading
           ? ""
@@ -51,9 +52,12 @@ class Articles extends Component {
                     className="articleTitle"
                   >
                     <h4>{article.title}</h4>
-                    {article.created_at}
-                    {article.comment_count}
-                    <div className="articleAuthor">{article.author}</div>
+
+                    <p className="articleAuthorDate">
+                      {article.created_at}
+                      {article.author}
+                      {/* Comments: {article.comment_count} popup?*/}
+                    </p>
                   </Link>
                 </div>
               );
@@ -74,15 +78,23 @@ class Articles extends Component {
     }
   };
 
-  componentDidMount = () => {
+  componentDidMount = async => {
     const { topic, sort_by, order } = this.props;
     this.fetchArticles(topic, sort_by, order);
   };
 
-  fetchArticles = (topic, sort_by, order) => {
-    api.getArticles(topic, sort_by, order).then(articles => {
+  fetchArticles = async (topic, sort_by, order) => {
+    try {
+      const articles = await api.getArticles(topic, sort_by, order);
       this.setState({ articles, isLoading: false });
-    });
+    } catch (err) {
+      navigate("/error", {
+        // state: {
+        //   message: "Oops! The page could not be found."
+        // },
+        replace: true
+      });
+    }
   };
 
   handleChange = event => {
