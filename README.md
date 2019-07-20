@@ -24,10 +24,10 @@ This project can also be accessed here: https://nc-new-fatoumi.netlify.com/
 
 ## Built With
 
-```* React https://reactjs.org/ - The web framework used
-* Reach Router https://reach.tech/router - Used to structure components 
-* Axios - Used to retrieve data
-* HTML/CSS - Structure and styling
+``` React https://reactjs.org/ - The web framework used
+ Reach Router https://reach.tech/router - Used to structure components 
+ Axios - Used to retrieve data
+ HTML/CSS - Structure and styling
 ```
 ## Authors
 
