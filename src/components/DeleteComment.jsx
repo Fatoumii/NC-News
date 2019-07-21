@@ -8,7 +8,7 @@ class DeleteComment extends React.Component {
       <div>
         {this.props.username === "jessjelly" ? (
           <button className="deleteButton" onClick={this.deleteComment}>
-            DELETE COMMENT
+            DELETE
           </button>
         ) : null}
       </div>

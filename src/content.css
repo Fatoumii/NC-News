@@ -6,7 +6,6 @@
   border: 1px solid black;
   overflow-y: scroll;
 }
-
 .innerContent {
   overflow-y: scroll;
 }
@@ -19,31 +18,7 @@
   justify-content: space-evenly;
   float: left;
   text-transform: uppercase;
-  padding: 12px;
   box-shadow: 0px 0px 10px black;
-}
-
-.sortby {
-  border-radius: 3px;
-  width: 110px;
-  height: 25px;
-  margin: 3px;
-  float: right;
-  background-color: whitesmoke;
-  top: 200px;
-  margin: 8px 5px 0px 0px;
-}
-.sortby:hover {
-  box-shadow: 0px 0px 5px 1px grey;
-}
-
-.order {
-  background-color: whitesmoke;
-  border-radius: 3px;
-  width: 110px;
-  height: 20px;
-  margin: 3px;
-  float: right;
 }
 .navLinks {
   padding: 5px;
@@ -55,12 +30,32 @@
   transform: scale(1.1);
   transition: 0.3s;
 }
-
 .navLinks:link {
   text-decoration: none;
 }
 .navLinks:visited {
   text-decoration: none;
+}
+.sortby {
+  border-radius: 3px;
+  width: 110px;
+  height: 25px;
+  margin: 3px;
+  float: right;
+  background-color: whitesmoke;
+  top: 200px;
+  margin: 15px;
+}
+.sortby:hover {
+  box-shadow: 0px 0px 5px 1px grey;
+}
+.order {
+  background-color: whitesmoke;
+  border-radius: 3px;
+  width: 110px;
+  height: 20px;
+  margin: 3px;
+  float: right;
 }
 
 .topArticles {
@@ -76,7 +71,9 @@
   justify-content: center;
   height: 100%;
 }
-
+p.topArticleTitle {
+  padding-top: 20px;
+}
 .topArticleTitle {
   border-radius: 3px 0px 0px 0px;
   padding: 10px;
@@ -93,16 +90,17 @@
   color: rgb(41, 39, 39);
   font-size: 15px;
   text-decoration: none;
+  color: rgb(65, 58, 58);
+}
+.topArticleNames:hover {
+  transform: scale(1.02);
+  transition: 0.2s;
 }
 li.topArticleNames {
   border: 1px solid rgb(165, 161, 161);
   border-top: black;
   margin: 5px;
-}
-
-.topArticleNames:hover {
-  transform: scale(1.02);
-  transition: 0.2s;
+  color: black;
 }
 
 .articlePageHeader {
@@ -114,11 +112,13 @@ li.topArticleNames {
   height: 30px;
   justify-content: center;
 }
+h4.articlePageHeader {
+  padding-top: 20px;
+}
 
 .articleCard {
   margin-right: 3px;
   margin-left: 3px;
-  /* margin: 0px 3px 10px 3px; */
   margin-bottom: 10px;
   box-shadow: 2px 2px 7px rgb(139, 133, 133);
   background-color: white;
@@ -128,19 +128,19 @@ li.topArticleNames {
   cursor: pointer;
   display: grid;
   grid-template-columns: 1.5fr 6fr;
-  height: 10vh;
+  height: 15vh;
 }
 .articleCard:hover {
   transform: scale(1.01);
   transition: 0.2s;
 }
-
 .articleTitle {
   grid-area: 1/2;
-  height: 10vh;
+  height: 100%;
   text-decoration: none;
   background-color: rgb(85, 41, 41);
   color: rgb(207, 200, 200);
+  font-size: 18px;
 }
 .articleAuthor {
   float: right;
@@ -150,27 +150,30 @@ li.topArticleNames {
 .singleArticle {
   background-color: whitesmoke;
   margin: 5px 10px 5px 5px;
-  /* overflow-y: scroll; */
   display: grid;
   border-radius: 0px 3px 3px 0px;
   box-shadow: 0px 0px 10px black;
 }
 .innerSingleArticle {
-  padding: 10px;
+  padding: 20px;
+  color: rgb(65, 58, 58);
 }
-
-h6 {
+.singleArticleBody {
+  padding: 20px;
+  border-radius: 0px 3px 0px 0px;
+  box-shadow: 0px 0px 10px 2px rgb(165, 144, 144);
+}
+.articleAuthorDate {
+  border: 1px solid black;
   display: inline;
 }
 
-.submit {
+.articleVotes {
+  border-bottom: 1.5px solid grey;
+  border-right: 1px solid grey;
+  border-left: 1px solid grey;
+  border-radius: 3px;
   padding: 5px;
-  box-shadow: 0px 0px 5px 1px rgb(224, 222, 222);
-  border: none;
-}
-.submit:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
 }
 
 .singleComment {
@@ -185,43 +188,59 @@ h6 {
 }
 .innerSingleComment {
   grid-area: 1/2;
-  height: 10vh;
-  font-size: 12px;
+  font-size: 14px;
   overflow: scroll;
   text-align: justify;
-  margin: 0px;
+  margin: 10px;
+}
+.deleteButton {
+  padding: 3px 5px;
+  background-color: white;
+  border-radius: 3px;
+}
+.deleteButton:hover {
+  background-color: whitesmoke;
+}
+.voteButton {
+  border-radius: 3px;
+  margin: 2px;
+}
+.voteButton:hover {
+  background-color: whitesmoke;
 }
 
 .form {
   grid-area: 2/3;
-  border: 1px solid yellow;
   padding: 10px;
 }
+textarea {
+  height: 90px;
+  width: 90%;
+  border: none;
+}
 
-.post {
+.submit {
+  padding: 5px;
+  box-shadow: 0px 0px 5px 1px rgb(224, 222, 222);
+  border: none;
+  border-radius: 2px;
+}
+.submit:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+/* .post {
   border: 1px solid black;
   padding: 3px;
   border-radius: 10px;
   width: 20px;
   height: 20px;
-}
-
-.singleArticleBody {
-  padding: 10px;
-}
-
-.articleAuthorDate {
-  border: 1px solid black;
+} */
+/* h6 {
   display: inline;
-}
-.deleteButton {
-  padding: 3px;
-}
+} */
 
 @media only screen and (max-width: 600px) {
-  .articleAuthorDate {
-    visibility: hidden;
-  }
   .content {
     grid-template-rows: 7vh 1fr;
     grid-template-columns: 1fr;
@@ -232,8 +251,34 @@ h6 {
     border-radius: 0px;
     padding: 10px;
   }
+  .articleTitle {
+    font-size: 15px;
+  }
+  .articleTitle h4 {
+    border: 1px solid orange;
+  }
   .innerSingleArticle {
     border-radius: 0px;
     padding: 20px;
+  }
+  .articleAuthorDate {
+    visibility: hidden;
+  }
+  .votes {
+    font-size: 14px;
+  }
+  .voteButton {
+    border: 1px solid rgb(175, 172, 172);
+    border-radius: 3px;
+    background-color: white;
+    margin: 2px;
+  }
+  .singleComment {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+  }
+  .innerSingleComment {
+    grid-area: 1/2;
+    font-size: 12px;
   }
 }

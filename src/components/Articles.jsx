@@ -33,9 +33,9 @@ class Articles extends Component {
         {isLoading ? (
           "Loading..."
         ) : this.props.topic ? (
-          <p className="articlePageHeader">{`ARTICLES ON ${this.props.topic.toUpperCase()}`}</p>
+          <h4 className="articlePageHeader">{`ARTICLES ON ${this.props.topic.toUpperCase()}`}</h4>
         ) : (
-          <p className="articlePageHeader">{"ALL ARTICLES"}</p>
+          <h4 className="articlePageHeader">{"ALL ARTICLES"}</h4>
         )}
         {isLoading
           ? ""
@@ -52,11 +52,10 @@ class Articles extends Component {
                     className="articleTitle"
                   >
                     <h4>{article.title}</h4>
-
                     <h5 className="articleAuthorDate">
                       {article.created_at}
                       {article.author}
-                      {/* Comments: {article.comment_count} popup?*/}
+                      Comments: {article.comment_count}
                     </h5>
                   </Link>
                 </div>

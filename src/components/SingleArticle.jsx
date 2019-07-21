@@ -21,14 +21,18 @@ class SingleArticle extends React.Component {
           "Loading..."
         ) : (
           <div className="innerSingleArticle">
-            <h3>{title}</h3>
-            <h5>
-              Author: <i>{author}</i>
-              <br />
-              <i>{created_at}</i>
-            </h5>
-            <p className="singleArticleBody">{body}</p>
-            <p>Article votes: {votes}</p>
+            <div className="singleArticleBody">
+              <h3>{title}</h3>
+              <h5>
+                Author: <i>{author}</i>
+                <br />
+                <i>{created_at}</i>
+                <br />
+                <br />
+                <bold className="articleVotes">Article votes: {votes}</bold>
+              </h5>
+              <p>{body}</p>
+            </div>
             <br />
             <Comments article_id={article_id} />
           </div>

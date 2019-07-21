@@ -8,9 +8,12 @@ const Nav = props => {
     <div className="nav">
       {topics.map(({ slug }) => {
         return (
-          <Link to={`/topics/${slug}`} key={slug} className="navLinks">
-            {slug}
-          </Link>
+          <h4>
+            {" "}
+            <Link to={`/topics/${slug}`} key={slug} className="navLinks">
+              {slug}
+            </Link>{" "}
+          </h4>
         );
       })}
     </div>
