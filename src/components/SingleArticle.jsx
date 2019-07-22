@@ -48,7 +48,7 @@ class SingleArticle extends React.Component {
     } catch (err) {
       navigate("/error", {
         state: {
-          message: "Oops! The page could not be found."
+          message: "Oops! The article could not be found."
         },
         replace: true
       });

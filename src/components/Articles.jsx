@@ -87,7 +87,7 @@ class Articles extends Component {
     } catch (err) {
       navigate("/error", {
         state: {
-          message: "Oops! The page could not be found."
+          message: "Oops! The topic could not be found."
         },
         replace: true
       });
