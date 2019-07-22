@@ -10,7 +10,12 @@ const Nav = props => {
         return (
           <h4>
             {" "}
-            <Link to={`/topics/${slug}`} key={slug} className="navLinks">
+            <Link
+              to={`/topics/${slug}`}
+              key={slug}
+              data-cy={slug}
+              className="navLinks"
+            >
               {slug}
             </Link>{" "}
           </h4>

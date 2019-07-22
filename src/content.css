@@ -253,6 +253,7 @@ h4.articlePageHeader {
 }
 .voteButton {
   border-radius: 3px;
+  background-color: white;
   margin: 2px;
 }
 .voteButton:hover {

@@ -49,6 +49,7 @@ class Articles extends Component {
                   <Link
                     to={`/articles/${article.article_id}`}
                     className="articleTitle"
+                    data-cy={article.article_id}
                   >
                     <h4>{article.title}</h4>
                     <p className="articleAuthorDate">

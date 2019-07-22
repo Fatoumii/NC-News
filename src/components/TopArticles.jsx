@@ -9,7 +9,7 @@ class TopArticles extends Component {
   render() {
     const { articles } = this.state;
     return (
-      <div className="topArticles">
+      <div data-cy="topArticlesHeader" className="topArticles">
         <p className="topArticleTitle">TOP ARTICLES</p>
         {articles.slice(0, 5).map(article => {
           return (
@@ -17,6 +17,7 @@ class TopArticles extends Component {
               >
               <Link
                 to={`/articles/${article.article_id}`}
+                data-cy={article.article_id}
                 className="topArticleNames"
               >
                 {article.title}
