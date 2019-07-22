@@ -7,7 +7,11 @@ class DeleteComment extends React.Component {
     return (
       <div>
         {this.props.username === "jessjelly" ? (
-          <button className="deleteButton" onClick={this.deleteComment}>
+          <button
+            data-cy="deleteButton"
+            className="deleteButton"
+            onClick={this.deleteComment}
+          >
             DELETE
           </button>
         ) : null}
