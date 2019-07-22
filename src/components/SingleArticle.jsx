@@ -3,7 +3,7 @@ import * as api from "../utils";
 import "../content.css";
 import Comments from "./Comments";
 import propType from "prop-types";
-import { navigate } from "@reach/router/lib/history";
+import { navigate } from "@reach/router";
 
 class SingleArticle extends React.Component {
   state = {
@@ -26,7 +26,10 @@ class SingleArticle extends React.Component {
               <h5>
                 Author: <i>{author}</i>
                 <br />
-                <i>{created_at}</i>
+                <i>
+                  {created_at.slice(0, 10) + " "}
+                  {created_at.slice(11, 19)}
+                </i>
                 <br />
                 <br />
                 <bold className="articleVotes">Article votes: {votes}</bold>
@@ -48,7 +51,7 @@ class SingleArticle extends React.Component {
     } catch (err) {
       navigate("/error", {
         state: {
-          message: "Oops! The article could not be found."
+          message: "**Oops! The article could not be found**"
         },
         replace: true
       });

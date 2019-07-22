@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 import * as api from "../utils";
 import Vote from "./Votes";
 import propType from "prop-types";
-import { navigate } from "@reach/router/lib/history";
 
 class Articles extends Component {
   state = {
@@ -53,7 +52,12 @@ class Articles extends Component {
                   >
                     <h4>{article.title}</h4>
                     <p className="articleAuthorDate">
-                      <i>Author: {article.author}</i>
+                      <i>
+                        Author: {article.author}
+                        <br />
+                        {article.created_at.slice(0, 10) + " "}
+                        {article.created_at.slice(11, 19)}
+                      </i>
                     </p>
                   </Link>
                 </div>
@@ -87,7 +91,7 @@ class Articles extends Component {
     } catch (err) {
       navigate("/error", {
         state: {
-          message: "Oops! The topic could not be found."
+          message: "**The topic could not be found**"
         },
         replace: true
       });

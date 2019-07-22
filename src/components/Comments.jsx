@@ -40,7 +40,8 @@ class Comments extends React.Component {
                   <i>
                     {comment.author}
                     <br />
-                    {comment.created_at}
+                    {comment.created_at.slice(0, 10) + " "}
+                    {comment.created_at.slice(11, 19)}
                   </i>
                 </div>
                 <DeleteComment
