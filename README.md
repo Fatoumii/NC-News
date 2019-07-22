@@ -18,7 +18,7 @@ Cypress
 
 ### Installing
 
-At this point, start the server by running the script **`npm start`**. With this, you'll have the application up and running on yout local machine.
+At this point, start the server by running the script **`npm start`**. With this, you'll have the application up and running on your local machine.
 
 ## Deployment
 
