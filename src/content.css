@@ -3,13 +3,64 @@
   grid-template-rows: 7vh 1fr;
   grid-template-columns: 1fr 5fr;
   grid-template-areas: "nav nav" "topArticles articles";
-  border: 1px solid black;
   overflow-y: scroll;
 }
 .innerContent {
   overflow-y: scroll;
 }
+.errorContent {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(85, 41, 41);
+}
+.errorText {
+  margin: 20px 190px;
+  padding: 70px 100px;
+  color: rgb(207, 200, 200);
+  font-size: 24px;
+  position: absolute;
+  top: 40%;
+  left: 13%;
+}
+.homeContent {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(85, 41, 41);
+}
 
+.homeButton {
+  border-radius: 3px;
+  padding: 5px 15px;
+  margin: 5px;
+  font-size: 16px;
+  background-color: rgb(85, 41, 41);
+  color: rgb(207, 200, 200);
+}
+.homeButton:hover {
+  transform: scale(1.1);
+  transition: 1s;
+  box-shadow: 0px 0px 20px 4px rgb(185, 184, 184);
+}
+.homepageBox {
+  border-radius: 7px;
+  box-shadow: 0px 0px 20px 2px rgb(151, 148, 148);
+  margin: 20px 190px;
+  padding: 70px 100px;
+  position: absolute;
+  left: 7%;
+  top: 35%;
+  background-color: whitesmoke;
+  z-index: 9999;
+  border-style: none double none double;
+}
+.homepageBox:hover {
+  transform: scale(1.05);
+  transition: 1.5s;
+  box-shadow: 0px 0px 50px 2px rgb(151, 148, 148);
+}
+.siteInfo {
+  font-size: 18px;
+}
 .nav {
   grid-area: nav;
   background-color: rgb(85, 41, 41);
@@ -18,7 +69,6 @@
   justify-content: space-evenly;
   float: left;
   text-transform: uppercase;
-  box-shadow: 0px 0px 10px black;
 }
 .navLinks {
   padding: 5px;
@@ -26,10 +76,10 @@
   cursor: pointer;
   color: rgb(207, 200, 200);
 }
-.navLinks:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
-}
+/* .navLinks:hover {
+  border-bottom: black;
+  transition: 1.5s;
+} */
 .navLinks:link {
   text-decoration: none;
 }
@@ -94,7 +144,7 @@ p.topArticleTitle {
 }
 .topArticleNames:hover {
   transform: scale(1.02);
-  transition: 0.2s;
+  transition: 0.5s;
 }
 li.topArticleNames {
   border: 1px solid rgb(165, 161, 161);
@@ -132,7 +182,7 @@ h4.articlePageHeader {
 }
 .articleCard:hover {
   transform: scale(1.01);
-  transition: 0.2s;
+  transition: 0.5s;
 }
 .articleTitle {
   grid-area: 1/2;
@@ -141,10 +191,6 @@ h4.articlePageHeader {
   background-color: rgb(85, 41, 41);
   color: rgb(207, 200, 200);
   font-size: 18px;
-}
-.articleAuthor {
-  float: right;
-  font-size: 10px;
 }
 
 .singleArticle {
@@ -163,9 +209,14 @@ h4.articlePageHeader {
   border-radius: 0px 3px 0px 0px;
   box-shadow: 0px 0px 10px 2px rgb(165, 144, 144);
 }
+
+.singleArticleBody p {
+  margin: 40px;
+  line-height: 1.5;
+}
 .articleAuthorDate {
-  border: 1px solid black;
   display: inline;
+  font-size: 14px;
 }
 
 .articleVotes {
@@ -217,6 +268,8 @@ textarea {
   height: 90px;
   width: 90%;
   border: none;
+  padding: 10px;
+  border-radius: 3px;
 }
 
 .submit {
@@ -227,18 +280,8 @@ textarea {
 }
 .submit:hover {
   transform: scale(1.1);
-  transition: 0.3s;
+  transition: 0.5s;
 }
-/* .post {
-  border: 1px solid black;
-  padding: 3px;
-  border-radius: 10px;
-  width: 20px;
-  height: 20px;
-} */
-/* h6 {
-  display: inline;
-} */
 
 @media only screen and (max-width: 600px) {
   .content {
@@ -252,11 +295,11 @@ textarea {
     padding: 10px;
   }
   .articleTitle {
+    height: 13vh;
     font-size: 15px;
+    padding: 5px;
   }
-  .articleTitle h4 {
-    border: 1px solid orange;
-  }
+
   .innerSingleArticle {
     border-radius: 0px;
     padding: 20px;
@@ -276,9 +319,22 @@ textarea {
   .singleComment {
     display: grid;
     grid-template-columns: 1fr 2.5fr;
+    height: 18vh;
   }
   .innerSingleComment {
     grid-area: 1/2;
     font-size: 12px;
+    margin: 0px;
+    padding: 3px;
+  }
+  .singleArticleBody p {
+    margin: 10px;
+    font-size: 14px;
+  }
+
+  .homepageBox {
+    padding: 30px;
+    position: absolute;
+    width: 50%;
   }
 }

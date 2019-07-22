@@ -2,8 +2,10 @@ import React from "react";
 
 const Error = props => {
   return (
-    <div>
-      <p>Oops! The page could not be found.</p>
+    <div className="errorContent">
+      <p className="errorText">
+        ⚠️ Whoops! Looks like the page doesn't exist ⚠️
+      </p>
       {props.location && props.location.state && props.location.state.message}
     </div>
   );

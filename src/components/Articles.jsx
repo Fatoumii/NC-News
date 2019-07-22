@@ -52,11 +52,9 @@ class Articles extends Component {
                     className="articleTitle"
                   >
                     <h4>{article.title}</h4>
-                    <h5 className="articleAuthorDate">
-                      {article.created_at}
-                      {article.author}
-                      Comments: {article.comment_count}
-                    </h5>
+                    <p className="articleAuthorDate">
+                      <i>Author: {article.author}</i>
+                    </p>
                   </Link>
                 </div>
               );

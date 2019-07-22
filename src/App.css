@@ -24,12 +24,23 @@ body {
 }
 
 .content {
-  grid-area: "content";
+  grid-area: content;
 }
 
-.footer {
+footer {
   grid-area: footer;
   margin: 0em;
+  padding: 14px;
   background-color: rgb(41, 39, 39);
   color: rgb(230, 224, 224);
+}
+a {
+  text-decoration: none;
+  color: rgb(230, 224, 224);
+}
+
+@media only screen and (max-width: 600px) {
+  footer {
+    font-size: 12px;
+  }
 }
