@@ -1,17 +1,19 @@
 # NC News
 
-A frontend reddit style project using React and CSS, with data being requested from my backend project which can be found here https://github.com/Fatoumii/NC-backend-project 
+A frontend reddit style project using React and CSS, with data being requested from my backend project which can be found here https://github.com/Fatoumii/NC-backend-project
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-
 ### Prerequisites
+
 Clone this repository with command **`git clone https://github.com/Fatoumii/NC-News.git`**. Navigate into this file and install all the necessary dependencies by running **`npm i`**. The dependencies are listed below or you can take a look at them in the **`package.json`** file.
 
 ```
 Axios
+Reach Router
+Cypress
 ```
 
 ### Installing
@@ -24,16 +26,17 @@ This project can also be accessed here: https://nc-new-fatoumi.netlify.com/
 
 ## Built With
 
-``` React https://reactjs.org/ - The web framework used
- Reach Router https://reach.tech/router - Used to structure components 
+```React https://reactjs.org/ - The web framework used
+ Reach Router https://reach.tech/router - Used to structure components
  Axios - Used to retrieve data
  HTML/CSS - Structure and styling
 ```
+
 ## Authors
 
-* Fatimah - fatoumii
+- Fatimah - fatoumii
 
-____________________________________________________________________________________________________________________________
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
