@@ -20,6 +20,8 @@ Cypress
 
 At this point, start the server by running the script **`npm start`**. With this, you'll have the application up and running on your local machine.
 
+To be clear, the application is hard-coded to post and delete comments from _jessejelly_
+
 ## Deployment
 
 This project can also be accessed here: https://nc-new-fatoumi.netlify.com/
