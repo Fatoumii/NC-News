@@ -18,7 +18,8 @@ class AddComment extends Component {
             value={this.state.body}
             onChange={this.handleChange}
           />
-        </label>
+        </label>{" "}
+        <br />
         <button
           className="submit"
           type="submit"

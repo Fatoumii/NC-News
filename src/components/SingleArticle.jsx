@@ -3,6 +3,7 @@ import * as api from "../utils";
 import "../content.css";
 import Comments from "./Comments";
 import propType from "prop-types";
+import { navigate } from "@reach/router/lib/history";
 
 class SingleArticle extends React.Component {
   state = {
@@ -20,15 +21,18 @@ class SingleArticle extends React.Component {
           "Loading..."
         ) : (
           <div className="innerSingleArticle">
-            <h3>{title}</h3>
-            <h6 className="author">
-              <i>{author}</i>
-            </h6>
-            <h6 className="date">
-              <i>{created_at}</i>
-            </h6>
-            <p className="singleArticleBody">{body}</p>
-            <p>Article votes: {votes}</p>
+            <div className="singleArticleBody">
+              <h3>{title}</h3>
+              <h5>
+                Author: <i>{author}</i>
+                <br />
+                <i>{created_at}</i>
+                <br />
+                <br />
+                <bold className="articleVotes">Article votes: {votes}</bold>
+              </h5>
+              <p>{body}</p>
+            </div>
             <br />
             <Comments article_id={article_id} />
           </div>
@@ -36,16 +40,30 @@ class SingleArticle extends React.Component {
       </section>
     );
   }
+
+  fetchSingleArticle = async articleID => {
+    try {
+      const article = await api.singleArticle(articleID);
+      this.setState({ article, isLoading: false });
+    } catch (err) {
+      navigate("/error", {
+        state: {
+          message: "Oops! The page could not be found."
+        },
+        replace: true
+      });
+    }
+  };
+
   componentDidMount = () => {
     const { articleID } = this.props;
-    api.singleArticle(articleID).then(article => {
-      this.setState({ article, isLoading: false });
-    });
+    this.fetchSingleArticle(articleID);
   };
+
   componentDidUpdate = (prevProps, prevState) => {
     const { articleID } = this.props;
     if (articleID !== prevProps.articleID) {
-      //...
+      this.fetchSingleArticle(articleID);
     }
   };
 }
