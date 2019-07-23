@@ -63,10 +63,21 @@ class Comments extends React.Component {
 
   componentDidMount = () => {
     const { article_id } = this.props;
-    api.getComments(article_id).then(comments => {
-      this.setState({ comments });
-    });
+    this.fetchComments(article_id);
   };
+
+  fetchComments = async article_id => {
+    const comments = await api.getComments(article_id);
+    this.setState({ comments });
+  };
+
+  componentDidUpdate = (prevProps, prevState) => {
+    const { article_id } = this.props;
+    if (article_id !== prevProps.article_id) {
+      this.fetchComments(article_id);
+    }
+  };
+
   addNewComment = comment => {
     this.setState(state => {
       return {
