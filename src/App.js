@@ -15,6 +15,7 @@ class App extends Component {
   };
   render() {
     const { topics } = this.state;
+
     return (
       <div className="App">
         <Heading />
